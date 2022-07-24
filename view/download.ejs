@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>Download | QShare - File Sharing App</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1> QShare | File Sharing App.</h1>
+    
+
+    <section class="download">
+        <img class="download__icon" src="/img/loader.gif" alt="Qshare-download">
+        
+        <% if(locals.error){ %>
+        <h4><%= locals.error %> :/</h4>
+        <% } else { %>
+        <h2>File is ready to download</h2>
+        <p>Link expires in 24 hours</p>
+        <div class="download__meta">
+            <h4><%= fileName %></h4>
+            <h4><%= parseInt(fileSize/1000) %> KB</h4>
+        </div>
+        <div class="send-btn-container">
+            <a href="<%= downloadLink %>">Download file</a>
+        </div>
+        <% } %>
+    </section>
+
+    <!-- github fork button -->
+    <footer class = footer>
+        
+        Made with ❤️ by Varun.
+        <a href="https://github.com/vrun1208">
+            <i class="fab fa-github fa-lg"> </i> 
+        </a>   
+    </footer>
+</body>
+
+</html>
